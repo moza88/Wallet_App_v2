@@ -3,7 +3,7 @@ import './MenuMobile.css';
 import { Button, SidebarNavItem } from '..';
 import { RiBankCardFill, RiCloseLine, RiPieChartFill } from 'react-icons/ri';
 
-import { AiFillEuroCircle } from 'react-icons/ai';
+import { AiFillDollarCircle } from 'react-icons/ai';
 import { ModalContext } from '../../contexts/ModalContext';
 import { TiChartLine } from 'react-icons/ti';
 import useAuth from '../../hooks/useAuth';
@@ -32,7 +32,7 @@ const MenuMobile = () => {
               <SidebarNavItem
                 to='/deposit'
                 text='Deposit'
-                icon={<AiFillEuroCircle />}
+                icon={<AiFillDollarCircle />}
               />
             </div>
             <Button color='secondary' onClick={signout} size='xl'>

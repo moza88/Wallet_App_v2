@@ -3,10 +3,10 @@ import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyASa_N9o8jH4DVb2jA2b5VG-yW7wJh7JRA',
-  authDomain: 'coinbase-clone-0101.firebaseapp.com',
-  projectId: 'coinbase-clone-0101',
-  storageBucket: 'coinbase-clone-0101.appspot.com',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: '737129325620',
   appId: '1:737129325620:web:3b12cdd66bfb2956255661',
 };

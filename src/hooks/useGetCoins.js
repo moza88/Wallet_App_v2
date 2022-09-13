@@ -2,37 +2,44 @@ import { collection, onSnapshot, query } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 import { adaptFetchedCoins } from '../utilities/adapt-fetched-coins';
-import axios from 'axios';
 import { db } from '../firebase-config';
 
-const REQUEST_OPTIONS = {
+const axios = require("axios");
+
+const options = {
   method: 'GET',
   url: 'https://coinranking1.p.rapidapi.com/coins',
   params: {
-    referenceCurrencyUuid: '5k-_VTxqtCEI',
+    referenceCurrencyUuid: 'yhjMzLPhuIDl',
     timePeriod: '24h',
-    tiers: '1,2',
+    'tiers[0]': '1',
     orderBy: 'marketCap',
     orderDirection: 'desc',
-    limit: '100',
-    offset: '0',
+    limit: '50',
+    offset: '0'
   },
   headers: {
-    'x-rapidapi-host': process.env.REACT_APP_X_RAPIDAPI_HOST,
-    'x-rapidapi-key': process.env.REACT_APP_X_RAPIDAPI_KEY,
-  },
+    'X-RapidAPI-Key': '4267c7a7ccmsh5409e317ce71bf6p1f7f2ajsn399779b7a989',
+    'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+  }
 };
+
+axios.request(options).then(function (response) {
+  console.log(response.data.data.coins);
+}).catch(function (error) {
+  console.error(error);
+});
 
 const useGetCoins = () => {
   const [coins, setCoins] = useState([]);
   const [yourCoins, setYourCoins] = useState([]);
 
-  const fetchCoins = async (options) => {
+  const fetchCoins = async () => {
     try {
       console.log('fetching coins...')
       const response = await axios.request(options);
-      const coins = await response.data.data.coins;
-      return coins;
+      //console.log(response.data.data.coins)
+      return response.data.data.coins;
     } catch (error) {
       console.error(error);
     }
@@ -59,7 +66,7 @@ const useGetCoins = () => {
   }, []);
 
   useEffect(() => {
-    handleGetAllCoins(REQUEST_OPTIONS, yourCoins);
+    handleGetAllCoins('GET', yourCoins);
   }, [yourCoins]);
 
   return { coins };

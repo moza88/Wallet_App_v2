@@ -1,17 +1,17 @@
 .Button {
   padding: 5px;
-  border: 1px solid #2151f5;
+  border: 1px solid #800000;
   padding: 11px 16px;
   border-radius: 4px;
   font-size: 15px;
   font-weight: 600;
-  background-color: #2151f5;
+  background-color: #800000;
   color: white;
   cursor: pointer;
 }
 
 .Button:hover {
-  background-color: #1d48d6;
+  background-color: #800000;
 }
 
 .Button:disabled {
@@ -58,11 +58,11 @@
 }
 
 .btn-light.btn-primary {
-  color: #2151f5;
+  color: #800000;
 }
 
 .btn-light.btn-primary:hover {
-  color: #1d48d6;
+  color: #800000;
   background-color: white;
 }
 

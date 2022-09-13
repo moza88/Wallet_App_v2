@@ -3,7 +3,7 @@ import './Sidebar.css';
 import { Logo, SidebarNavItem } from '..';
 import { RiBankCardFill, RiPieChartFill } from 'react-icons/ri';
 
-import { AiFillEuroCircle } from 'react-icons/ai';
+import { AiFillDollarCircle } from 'react-icons/ai';
 import { TiChartLine } from 'react-icons/ti';
 
 const Sidebar = () => {
@@ -17,7 +17,7 @@ const Sidebar = () => {
         <SidebarNavItem
           to='/deposit'
           text='Deposit'
-          icon={<AiFillEuroCircle />}
+          icon={<AiFillDollarCircle />}
         />
       </div>
     </nav>
